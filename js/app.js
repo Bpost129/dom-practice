@@ -4,5 +4,9 @@ titleEl.style.backgroundColor = 'coral'
 
 const imgEl = document.querySelector('#imagee')
 
+imgEl.setAttribute("src", `https://picsum.photos/${getRandomInt(200, 800)}`)
+imgEl.setAttribute("alt", "A random placeholder image")
 
-// console.log(titleEl)
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
