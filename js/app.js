@@ -13,8 +13,8 @@ const submitComment = () => {
   if (commentEl.textContent !== '') commentListEl.appendChild(commentEl)
   }
 
-const handleReaction = () => {
-  likesCount++
+const handleReaction = (e) => {
+  e.target.id === 'like-button' ? likesCount++ : likesCount--
   likeBtnEl.textContent = `${likesCount} like(s). Like this post!`
 }
 
