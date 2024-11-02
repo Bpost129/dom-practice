@@ -7,8 +7,15 @@ div {
   /* This makes the width of the div the width required by its content! */  
   width: fit-content;
   padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
   margin: 8px;
+}
+
+#like-count {
+  color: white;
 }
