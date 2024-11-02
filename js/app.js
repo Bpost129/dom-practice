@@ -8,12 +8,17 @@ likeBtnEl.addEventListener('click', () => {
   console.log('You clicked me!')
 })
 
-commentBtnEl.addEventListener('click', () => {
+const submitComment = () => {
   const commentEl = document.createElement('li');
   commentEl.textContent = inputEl.value
-  commentListEl.appendChild(commentEl)
-})
+  inputEl.value = ''
+  if (commentEl.textContent !== '') commentListEl.appendChild(commentEl)
+}
 
+commentBtnEl.addEventListener('click', submitComment)
+inputEl.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') commentBtnEl.click()
+})
 
 
 function getRandomInt(min, max) {
