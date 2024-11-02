@@ -1,6 +1,7 @@
 let likesCount = 0
 
 const likeBtnEl = document.querySelector('#like-button')
+const dislikeBtnEl = document.querySelector('#dislike-button')
 const commentBtnEl = document.querySelector('#comment-button')
 const commentListEl = document.querySelector('ul')
 const inputEl = document.querySelector('input')
@@ -12,12 +13,13 @@ const submitComment = () => {
   if (commentEl.textContent !== '') commentListEl.appendChild(commentEl)
   }
 
-const handleLike = () => {
+const handleReaction = () => {
   likesCount++
   likeBtnEl.textContent = `${likesCount} like(s). Like this post!`
 }
 
-likeBtnEl.addEventListener('click', handleLike)
+likeBtnEl.addEventListener('click', handleReaction)
+dislikeBtnEl.addEventListener('click', handleReaction)
 
 commentBtnEl.addEventListener('click', submitComment)
 
